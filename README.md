@@ -46,6 +46,7 @@ Poetry - A place for the beautifully written
 
   - Update the name of the package in `package.json` file to something less generic than `app`.
   - Update `.gitignore` to ignore `/**/*/node_modules` and `.env`.
+  - Remove the `eject` script from the package.json file.
 
 ### Node.js
 

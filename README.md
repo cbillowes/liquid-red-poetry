@@ -5,6 +5,7 @@
 ## Stack
 
 - [Git][git]
+- [Yarn][yarn]
 - [React][react]
 - [Node.js][nodejs]
 - [Firebase][firebase]
@@ -16,6 +17,15 @@
 - [Download][git] and install Git.
 - [Set up][git-set-up] your repository from scratch.
 - Push your repository to a remote solution like [GitHub][github].
+
+## Yarn
+
+- We will be using Yarn [instead][yarn-vs-npm] on npm to manage our project dependencies.
+- Install yarn globally via npm and use `yarn add` instead of `npm install` when adding dependencies to your projects.
+
+  ```bash
+  npm install -g yarn
+  ```
 
 ### React
 
@@ -66,21 +76,56 @@
 ### Firebase
 
 - Go to the [console][firebase-console]
-- Add a project
-  - Enter a name
-  -
 
+- Create a new Firebase project
+  - Enter a name (Google will help you keep it unique)
+  - Choose to add Google Analytics (you can disable it for now)
 
+- Add Firebase to your web app
+  - Project Settings (Gear next to Project Overview) > Your apps > Click on web icon
+  - Give an app nickname
+  - Don't need hosting just yet
+  - Click on the register app button
+  - Add the generated config to your [environment variables][react-env], `.env` file in your React web application
+
+    ```
+    REACT_APP_API_KEY=<key>
+    REACT_APP_AUTH_DOMAIN=<domain>
+    REACT_APP_PROJECT_ID=<project-id>
+    REACT_APP_STORAGE_BUCKET=<storage-bucket>
+    REACT_APP_MESSAGING_SENDER_ID=<messaging-sender-id>
+    ```
+
+- CLI tools and project dependencies
+
+  ```bash
+  npm install -g firebase-tools
+  # Authenticates using your Google account through the browser
+  firebase login
+  # Test if it worked by querying your projects
+  firebase projects:list
+
+  # Install firebase dependencies in app
+  cd app
+  yarn install firebase@9.2.0
+  ```
 
 ---
 
 [git]: https://git-scm.com/downloads
 [git-set-up]: https://www.atlassian.com/git/tutorials/setting-up-a-repository
 [github]: https://github.com/
+
+[yarn]: https://yarnpkg.com/getting-started/install
+[yarn-vs-npm]: https://waverleysoftware.com/blog/yarn-vs-npm/
+
 [react]: https://reactjs.org/docs/create-a-new-react-app.html
 [react-developer-tools]: https://reactjs.org/blog/2019/08/15/new-react-devtools.html
 [react-developer-tools-chrome]: https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
 [react-developer-tools-firefox]: https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/
+[react-env]: https://create-react-app.dev/docs/adding-custom-environment-variables/
+
 [nodejs]: https://nodejs.org/
+
 [firebase]: https://firebase.google.com/
 [firebase-console]: https://console.firebase.google.com/

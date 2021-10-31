@@ -8,6 +8,7 @@
 - [Yarn][yarn]
 - [Prettier][prettier]
 - [React][react]
+- [React Router][react-router]
 - [Node.js][nodejs]
 - [Firebase][firebase]
 
@@ -96,13 +97,19 @@ Web framework
   npm start
   ```
 
+### React Router
+Declarative routing for React
+
+```bash
+yarn add react-router-dom@5.3.0
+```
+
 ### Node.js
 
 - [Download][nodejs] and install the CLI (v 16.13.0) which includes npm 8.1.0. If you are using `nvm` then and switch to use it.
   ```bash
   nvm install 16 && nvm use 16
   ```
--
 
 ### Firebase
 
@@ -165,6 +172,8 @@ Web framework
 [react-developer-tools-chrome]: https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
 [react-developer-tools-firefox]: https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/
 [react-env]: https://create-react-app.dev/docs/adding-custom-environment-variables/
+
+[react-router]: https://reactrouter.com/web/guides/quick-start
 
 [nodejs]: https://nodejs.org/
 

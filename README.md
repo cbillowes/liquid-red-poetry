@@ -143,6 +143,8 @@ Web framework
 
 - Use these [guides][firebase-dev-guides] for accessing and developing with Firebase services
 
+- `git show 38759c8` to clean up the React project and prepare files for Firebase integration.
+
 ---
 
 [git]: https://git-scm.com/downloads

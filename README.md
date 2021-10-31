@@ -105,11 +105,67 @@ Declarative routing for React
 yarn add react-router-dom@5.3.0
 ```
 
+### Craco
+
+Configuration override
+
+[Install][craco]
+
+```bash
+yarn add @craco/craco
+```
+
+```diff
+{
+  // ...
+  "scripts": {
+-    "start": "react-scripts start",
+-    "build": "react-scripts build",
+-    "test": "react-scripts test",
++    "start": "craco start",
++    "build": "craco build",
++    "test": "craco test"
+  },
+  // ...
+}
+```
+
 ### Tailwind CSS
 A utility-first CSS framework for rapid UI development
 
+[Install][tailwind-install] Tailwind CSS.
+
 ```bash
-yarn add tailwindcss@2.2.19
+yarn add tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9 --dev
+```
+
+Configure `tailwindcss` and `autoprefixer` as PostCSS plugins:
+
+```js
+// craco.config.js
+module.exports = {
+  style: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ],
+    },
+  },
+}
+```
+
+Create the configuration file
+
+```bash
+npx tailwindcss-cli@latest init
+```
+
+Remove unused styles in production
+
+```diff
+-   purge: [],
++   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
 ```
 
 ### Node.js
@@ -182,6 +238,8 @@ yarn add tailwindcss@2.2.19
 [react-env]: https://create-react-app.dev/docs/adding-custom-environment-variables/
 
 [react-router]: https://reactrouter.com/web/guides/quick-start
+
+[craco]: https://github.com/gsoft-inc/craco/blob/master/packages/craco/README.md#installation
 
 [tailwindcss]: https://tailwindcss.com/docs
 

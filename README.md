@@ -1,6 +1,6 @@
 # Liquid Red
 
-Poetry - A place for the beautifully written
+**Poetry** - A place for beautifully written text doubling as a deep-dive tutorial to creating a React web application integrated with Firebase leveraging Git and Node.js within the stack.
 
 ## Stack
 

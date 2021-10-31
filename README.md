@@ -44,7 +44,8 @@ Poetry - A place for the beautifully written
   rm -rf ./app/.git
   ```
 
-  Update `.gitignore` to ignore `/**/*/node_modules` and `.env`.
+  - Update the name of the package in `package.json` file to something less generic than `app`.
+  - Update `.gitignore` to ignore `/**/*/node_modules` and `.env`.
 
 ### Node.js
 

@@ -24,6 +24,7 @@ Poetry - A place for the beautifully written
   - [Firefox][react-developer-tools-firefox]
 
 - Create the React application using the CRA tool chain.
+  At the time of writing, 17.0.2 was installed.
 
   ```bash
   npx create-react-app app
@@ -47,6 +48,12 @@ Poetry - A place for the beautifully written
   - Update the name of the package in `package.json` file to something less generic than `app`.
   - Update `.gitignore` to ignore `/**/*/node_modules` and `.env`.
   - Remove the `eject` script from the package.json file.
+
+- Run the application using the `start` script in package.json.
+
+  ```bash
+  npm start
+  ```
 
 ### Node.js
 

@@ -141,6 +141,8 @@ Web framework
   yarn install firebase@9.2.0
   ```
 
+- Use these [guides][firebase-dev-guides] for accessing and developing with Firebase services
+
 ---
 
 [git]: https://git-scm.com/downloads
@@ -162,3 +164,4 @@ Web framework
 
 [firebase]: https://firebase.google.com/
 [firebase-console]: https://console.firebase.google.com/
+[firebase-dev-guides]: https://firebase.google.com/docs/web/setup

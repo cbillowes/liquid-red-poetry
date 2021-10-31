@@ -6,6 +6,7 @@
 
 - [Git][git]
 - [Yarn][yarn]
+- [Prettier][prettier]
 - [React][react]
 - [Node.js][nodejs]
 - [Firebase][firebase]
@@ -13,12 +14,24 @@
 ## Getting Started
 
 ### Git
+Version control
 
 - [Download][git] and install Git.
 - [Set up][git-set-up] your repository from scratch.
 - Push your repository to a remote solution like [GitHub][github].
+- Create an ignore file.
 
-## Yarn
+  ```bash
+  echo > .gitignore
+  ```
+
+  ```
+  # Ignore dependencies:
+  /**/*node_modules
+  ```
+
+### Yarn
+Dependency manager
 
 - We will be using Yarn [instead][yarn-vs-npm] on npm to manage our project dependencies.
 - Install yarn globally via npm and use `yarn add` instead of `npm install` when adding dependencies to your projects.
@@ -27,7 +40,25 @@
   npm install -g yarn
   ```
 
+### Prettier
+Code formatter
+
+- Install and configure
+  ```bash
+  yarn add --dev --exact prettier
+  echo {}> .prettierrc.json
+  echo > .prettierignore
+  ```
+
+- Update files to ignore
+
+  ```
+  # Ignore dependencies:
+  **/node_modules
+  ```
+
 ### React
+Web framework
 
 - Install the React Developer Tools [extension][react-developer-tools] for your browser.
   - [Chrome][react-developer-tools-chrome]
@@ -56,7 +87,7 @@
   ```
 
   - Update the name of the package in `package.json` file to something less generic than `app`.
-  - Update `.gitignore` to ignore `/**/*/node_modules` and `.env`.
+  - Update `.gitignore` to ignore `**/node_modules` and `.env`.
   - Remove the `eject` script from the package.json file.
 
 - Run the application using the `start` script in package.json.
@@ -118,6 +149,8 @@
 
 [yarn]: https://yarnpkg.com/getting-started/install
 [yarn-vs-npm]: https://waverleysoftware.com/blog/yarn-vs-npm/
+
+[prettier]: https://prettier.io/
 
 [react]: https://reactjs.org/docs/create-a-new-react-app.html
 [react-developer-tools]: https://reactjs.org/blog/2019/08/15/new-react-devtools.html

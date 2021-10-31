@@ -9,6 +9,7 @@
 - [Prettier][prettier]
 - [React][react]
 - [React Router][react-router]
+- [Tailwind CSS][tailwindcss]
 - [Node.js][nodejs]
 - [Firebase][firebase]
 
@@ -104,6 +105,13 @@ Declarative routing for React
 yarn add react-router-dom@5.3.0
 ```
 
+### Tailwind CSS
+A utility-first CSS framework for rapid UI development
+
+```bash
+yarn add tailwindcss@2.2.19
+```
+
 ### Node.js
 
 - [Download][nodejs] and install the CLI (v 16.13.0) which includes npm 8.1.0. If you are using `nvm` then and switch to use it.
@@ -174,6 +182,8 @@ yarn add react-router-dom@5.3.0
 [react-env]: https://create-react-app.dev/docs/adding-custom-environment-variables/
 
 [react-router]: https://reactrouter.com/web/guides/quick-start
+
+[tailwindcss]: https://tailwindcss.com/docs
 
 [nodejs]: https://nodejs.org/
 

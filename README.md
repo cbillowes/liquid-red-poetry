@@ -145,6 +145,10 @@ Web framework
 
 - `git show 38759c8` to clean up the React project and prepare files for Firebase integration.
 
+#### Authentication
+
+- Set up email/password sign-in method in the [console][firebase-console].
+
 ---
 
 [git]: https://git-scm.com/downloads

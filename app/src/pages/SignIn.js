@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { getErrorMessage } from "../firebase/error";
-import { Link } from "react-router-dom";
 import { login } from "../firebase/auth";
-import { SubmitButton } from "../components/Button";
+import { SubmitButton, BrightLinkButton, DullLinkButton } from "../components/Button";
 import Textbox from "../components/Textbox";
 
 const SignIn = () => {
@@ -28,7 +27,12 @@ const SignIn = () => {
       <h1 className="text-3xl pl-5 mb-4">Sign in</h1>
       <hr className="-mt-2 mx-2 mb-4 border-gray-700" />
       <div className="pl-5 text-lg">
-        {errorMessage || "We'll get you started in no time."}
+        {errorMessage || (
+          <span>
+            Write something beautiful today.{" "}
+            <BrightLinkButton to="/signup" text="Not yet registered?" />
+          </span>
+        )}
       </div>
       <form className="relative" onSubmit={handleSubmit(onSubmit)}>
         <div className="m-2 mb-4">
@@ -52,6 +56,10 @@ const SignIn = () => {
         </div>
         <div className="mx-2 flex justify-end">
           <SubmitButton isLoading={isLoading} />
+        </div>
+
+        <div className="mt-2 flex justify-end pr-7">
+          <DullLinkButton to="/signup" text="(or Sign Up)" />
         </div>
       </form>
     </div>

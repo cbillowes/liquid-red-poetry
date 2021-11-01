@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
 const Button = ({ isLoading, text, className }) => {
@@ -13,7 +14,19 @@ const Button = ({ isLoading, text, className }) => {
 };
 
 const SubmitButton = ({ isLoading }) => (
-  <Button isLoading={isLoading} text="Continue" className="bg-yellow-400 w-32" />
+  <Button
+    isLoading={isLoading}
+    text="Continue"
+    className="bg-yellow-400 w-32"
+  />
 );
 
-export { SubmitButton };
+const BrightLinkButton = ({ to, text }) => {
+  return <Link to={to} className="text-yellow-400 hover:text-red-500">{text}</Link>;
+};
+
+const DullLinkButton = ({ to, text }) => {
+  return <Link to={to} className="text-gray-400 hover:text-red-500">{text}</Link>;
+};
+
+export { SubmitButton, BrightLinkButton, DullLinkButton };

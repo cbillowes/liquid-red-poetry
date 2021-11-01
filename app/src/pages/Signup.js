@@ -24,9 +24,11 @@ const Signup = () => {
 
   return (
     <div className="max-w-screen-md mx-auto">
-      <h1 className="text-gray-200 text-2xl pl-4 mb-4">Sign up</h1>
-      <hr className="mx-2 mb-2 border-gray-700" />
-      <div className="text-gray-400 pl-4">{errorMessage || "Let's make something beautiful!"}</div>
+      <h1 className="text-3xl pl-5 mb-4">Sign up</h1>
+      <hr className="-mt-2 mx-2 mb-4 border-gray-700" />
+      <div className="pl-5 text-lg">
+        {errorMessage || "We'll get you started in no time."}
+      </div>
       <form className="relative" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex w-full">
           <div className="w-1/2 m-2">
@@ -50,15 +52,27 @@ const Signup = () => {
             />
           </div>
         </div>
-        <div className="m-2 mb-4">
-          <Textbox
-            id="email"
-            type="email"
-            label="Email address"
-            placeholder="jason@example.com"
-            autocomplete="email"
-            register={register}
-          />
+        <div className="flex w-full">
+          <div className="w-1/2 m-2">
+            <Textbox
+              id="displayName"
+              type="text"
+              label="Display name"
+              placeholder="jason.bourne"
+              autocomplete="nickname"
+              register={register}
+            />
+          </div>
+          <div className="w-1/2 m-2">
+            <Textbox
+              id="email"
+              type="email"
+              label="Email address"
+              placeholder="jason@example.com"
+              autocomplete="email"
+              register={register}
+            />
+          </div>
         </div>
         <div className="m-2 mb-4">
           <Textbox

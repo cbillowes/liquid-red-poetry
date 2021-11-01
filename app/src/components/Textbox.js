@@ -11,8 +11,8 @@ const Textbox = ({
   optional = false,
 }) => {
   return (
-    <div className="text-gray-200 font-bold rounded-md p-2 bg-gray-700">
-      <label className="text-sm block pl-2">{label}</label>
+    <div className="font-bold rounded-md p-2 bg-gray-700">
+      <label className="text-sm block pl-2 ">{label}</label>
       <input
         id={id}
         type={type}

@@ -5,7 +5,7 @@ import "./firebase/config";
 
 function App() {
   return (
-    <div className="bg-gray-800 min-h-screen p-8">
+    <div className="bg-gray-800 min-h-screen p-8 font-sans-serif">
       <Header />
       <BrowserRouter>
         <Signup />

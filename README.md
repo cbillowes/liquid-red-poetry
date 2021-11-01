@@ -9,6 +9,7 @@
 - [Prettier][prettier]
 - [React][react]
 - [React Router][react-router]
+- [React Hook Form][react-hook-form]
 - [Tailwind CSS][tailwindcss]
 - [Node.js][nodejs]
 - [Firebase][firebase]
@@ -103,6 +104,15 @@ Declarative routing for React
 
 ```bash
 yarn add react-router-dom@5.3.0
+```
+
+### React Hook Format
+React Hooks for form validation
+
+[Install][react-hook-form] and configure
+
+```bash
+yarn add react-hook-form@7.18.0
 ```
 
 ### Craco
@@ -238,6 +248,8 @@ Remove unused styles in production
 [react-env]: https://create-react-app.dev/docs/adding-custom-environment-variables/
 
 [react-router]: https://reactrouter.com/web/guides/quick-start
+
+[react-hook-form]: https://react-hook-form.com/
 
 [craco]: https://github.com/gsoft-inc/craco/blob/master/packages/craco/README.md#installation
 

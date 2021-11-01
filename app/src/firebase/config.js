@@ -8,7 +8,4 @@ const config = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 
-const app = initializeApp(config);
-console.log(app);
-
-export default app;
+export const app = initializeApp(config);

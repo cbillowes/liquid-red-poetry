@@ -37,11 +37,11 @@ const SignIn = () => {
       <form className="relative" onSubmit={handleSubmit(onSubmit)}>
         <div className="m-2 mb-4">
           <Textbox
-            id="username"
+            id="email"
             type="text"
-            label="Username"
+            label="Email address"
             placeholder="jason@example.com"
-            autocomplete="username"
+            autocomplete="email"
             register={register}
           />
         </div>

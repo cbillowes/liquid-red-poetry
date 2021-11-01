@@ -7,6 +7,8 @@ const isWeakPassword = (error) => error.indexOf("auth/weak-password") > -1;
 
 const isNotRegistered = (error) => error.indexOf("auth/missing-email") > -1;
 
+const isWrongPassword = (error) => error.indexOf("auth/wrong-password") > -1;
+
 const ErrorMessage = ({ children }) => (
   <span className="text-red-500 font-bold">{children}</span>
 );
@@ -34,6 +36,13 @@ export const getErrorMessage = (exception) => {
           It doesn't look like you have signed up yet.
         </ErrorMessage>
       );
+
+    if (isWrongPassword(error))
+      return (
+        <ErrorMessage>
+          Things don't seem right. Please try again.
+        </ErrorMessage>
+      )
 
     return <ErrorMessage>Oh no! Something went wrong.</ErrorMessage>;
   }

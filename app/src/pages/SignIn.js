@@ -9,7 +9,7 @@ import {
 } from "../components/Button";
 import Textbox from "../components/Textbox";
 
-const SignIn = () => {
+const SignIn = ({ history }) => {
   const { register, handleSubmit, reset } = useForm();
   const [isLoading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -17,7 +17,10 @@ const SignIn = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      await login(data);
+      const user = await login(data);
+      if (user) {
+        history.push(`/profile/${user.uid}`);
+      }
       reset();
     } catch (e) {
       const error = getErrorMessage(e);

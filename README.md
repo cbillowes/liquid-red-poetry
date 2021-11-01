@@ -230,6 +230,45 @@ Remove unused styles in production
 
 - Set up email/password sign-in method in the [console][firebase-console].
 
+#### Firestore
+
+Provision your Cloud Firestore database.
+- Firestore Database > Create database > Start in **production mode**.
+- Choose your Cloud Firestore location (you cannot change this later!)
+- Initialize Firebase in app
+
+  ```bash
+  cd app
+  firebase init
+  # press space and enter for Firestore
+  # use an existing project
+  # select your project
+  # accept default files:
+  #   firestore.rules
+  #   firestore.indexes.json
+  ```
+
+- Update rules to allow read, writes and updates for a given user.
+
+  ```
+  rules_version = '2';
+  service cloud.firestore {
+    match /databases/{database}/documents {
+      match /users/{userId} {
+        allow read, write, update: if request.auth.uid == userId;
+      }
+    }
+  }
+  ```
+
+- Deploy rules to Google Firebase. _(`deploy:firestore-rules` script exists in package.json)_
+
+  ```bash
+  firebase deploy --only firestore:rules
+  # or
+  npm run deploy:firestore-rules
+  ```
+
 ---
 
 [git]: https://git-scm.com/downloads

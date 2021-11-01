@@ -1,24 +1,47 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { logout } from "../firebase/auth";
 import { useSession } from "../firebase/UserProvider";
+import { LinkButton, DullLinkButton } from "./Button";
 
-const SignedIn = ({ displayName }) => (
+const signOut = async (history) => {
+  await logout();
+  history.push("/login");
+};
+
+const SignedIn = ({ displayName, history }) => (
   <div className="text-white">
-    Hello, <strong className="text-yellow-400 font-bold">{displayName}</strong>
+    Hello, <strong className="text-yellow-400 font-bold">{displayName}</strong>{" "}
+    /{" "}
+    <LinkButton
+      text="Logout"
+      className="text-gray-400"
+      onClick={() => signOut(history)}
+    />
   </div>
 );
 
-const SignOut = () => <div>Sign out</div>;
+const SignedOut = () => (
+  <div className="text-white">
+    <DullLinkButton to="/login" text="Sign In" />
+  </div>
+);
 
 const Header = () => {
+  const history = useHistory();
   const { user } = useSession();
 
   return (
-    <div className="max-w-screen-2xl mx-auto flex justify-between">
-      <div className="text-5xl mb-10 mx-4">
+    <div className="max-w-screen-2xl mx-auto flex justify-between mb-12 items-center">
+      <div className="text-5xl mx-4">
         <span className="text-white font-sans-serif font-thin">liquid</span>
         <span className="text-red-500 font-serif font-bold">Red</span>
       </div>
-      {user ? <SignedIn displayName={user.displayName} /> : <SignOut />}
+      {user ? (
+        <SignedIn displayName={user.displayName} history={history} />
+      ) : (
+        <SignedOut />
+      )}
     </div>
   );
 };

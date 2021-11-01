@@ -34,7 +34,7 @@ const SignUp = () => {
         {errorMessage || (
           <span>
             We'll get you started in no time.{" "}
-            <BrightLinkButton to="/signin" text="Already registered?" />
+            <BrightLinkButton to="/login" text="Already registered?" />
           </span>
         )}
       </div>
@@ -97,7 +97,7 @@ const SignUp = () => {
         </div>
 
         <div className="mt-2 flex justify-end pr-7">
-          <DullLinkButton to="/signin" text="(or Sign In)" />
+          <DullLinkButton to="/login" text="(or Sign In)" />
         </div>
       </form>
     </div>

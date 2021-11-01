@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { signup } from "../firebase/auth";
 import { getErrorMessage } from "../firebase/error";
-import Spinner from "../components/Spinner";
+import { SubmitButton } from "../components/Button";
 import Textbox from "../components/Textbox";
 
-const Signup = () => {
+const SignUp = () => {
   const { register, handleSubmit, reset } = useForm();
   const [isLoading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -84,16 +84,11 @@ const Signup = () => {
           />
         </div>
         <div className="mx-2 flex justify-end">
-          <button
-            className="bg-yellow-400 rounded-md hover:bg-red-500 cursor-pointer flex items-center h-12 w-24 justify-center"
-            type="submit"
-          >
-            {isLoading ? <Spinner /> : "Next"}
-          </button>
+          <SubmitButton isLoading={isLoading} />
         </div>
       </form>
     </div>
   );
 };
 
-export default Signup;
+export default SignUp;

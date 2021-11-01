@@ -1,27 +1,41 @@
 import React from "react";
 
+const isAlreadyRegistered = (error) =>
+  error.indexOf("auth/email-already-in-use") > -1;
+
+const isWeakPassword = (error) => error.indexOf("auth/weak-password") > -1;
+
+const isNotRegistered = (error) => error.indexOf("auth/missing-email") > -1;
+
+const ErrorMessage = ({ children }) => (
+  <span className="text-red-500 font-bold">{children}</span>
+);
+
 export const getErrorMessage = (exception) => {
   if (exception) {
     const error = exception.toString();
+    // TODO: remove
+    console.log(error);
 
-    if (error.indexOf("auth/email-already-in-use") > -1)
+    if (isAlreadyRegistered(error))
       return (
         <div>
-          <span className="text-red-500 font-bold">
-            Hmmmm, have you already signed up?
-          </span>{" "}
-          Let's log you in shall we?
+          <ErrorMessage>Hmmmm, have you already signed up?</ErrorMessage> Let's
+          log you in shall we?
         </div>
       );
 
-    if (error.indexOf("auth/weak-password") > -1)
+    if (isWeakPassword(error))
+      return <ErrorMessage>Try bulk up your password a bit.</ErrorMessage>;
+
+    if (isNotRegistered(error))
       return (
-        <span className="text-red-500 font-bold">
-          Try bulk up your password a bit.
-        </span>
+        <ErrorMessage>
+          It doesn't look like you have signed up yet.
+        </ErrorMessage>
       );
 
-    return "Something went wrong.";
+    return <ErrorMessage>Oh no! Something went wrong.</ErrorMessage>;
   }
 
   return "";

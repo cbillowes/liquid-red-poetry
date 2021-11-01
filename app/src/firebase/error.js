@@ -39,10 +39,8 @@ export const getErrorMessage = (exception) => {
 
     if (isWrongPassword(error))
       return (
-        <ErrorMessage>
-          Things don't seem right. Please try again.
-        </ErrorMessage>
-      )
+        <ErrorMessage>Things don't seem right. Please try again.</ErrorMessage>
+      );
 
     return <ErrorMessage>Oh no! Something went wrong.</ErrorMessage>;
   }

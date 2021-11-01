@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { signup } from "../firebase/auth";
 import { getErrorMessage } from "../firebase/error";
-import { SubmitButton, BrightLinkButton, DullLinkButton } from "../components/Button";
+import {
+  SubmitButton,
+  BrightLinkButton,
+  DullLinkButton,
+} from "../components/Button";
 import Textbox from "../components/Textbox";
 
 const SignUp = () => {

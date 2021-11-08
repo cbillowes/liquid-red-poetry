@@ -322,32 +322,25 @@ Provision your Cloud Firestore database.
 
 ---
 
+[readme-app]: ./app/README.md
 [node]: https://nodejs.org/
 [git]: https://git-scm.com/downloads
 [git-set-up]: https://www.atlassian.com/git/tutorials/setting-up-a-repository
 [github]: https://github.com/
-
 [yarn]: https://yarnpkg.com/getting-started/install
 [yarn-vs-npm]: https://waverleysoftware.com/blog/yarn-vs-npm/
-
 [prettier]: https://prettier.io/
-
 [react]: https://reactjs.org/docs/create-a-new-react-app.html
 [react-developer-tools]: https://reactjs.org/blog/2019/08/15/new-react-devtools.html
 [react-developer-tools-chrome]: https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
 [react-developer-tools-firefox]: https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/
 [react-env]: https://create-react-app.dev/docs/adding-custom-environment-variables/
-
 [react-router]: https://reactrouter.com/web/guides/quick-start
-
 [react-hook-form]: https://react-hook-form.com/
-
 [craco]: https://github.com/gsoft-inc/craco/blob/master/packages/craco/README.md#installation
-
 [tailwindcss]: https://tailwindcss.com/docs
-
+[tailwindcss-install]: https://tailwindcss.com/docs/guides/create-react-app
 [nodejs]: https://nodejs.org/
-
 [firebase]: https://firebase.google.com/
 [firebase-console]: https://console.firebase.google.com/
 [firebase-dev-guides]: https://firebase.google.com/docs/web/setup

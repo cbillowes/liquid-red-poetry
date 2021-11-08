@@ -152,7 +152,7 @@ yarn add @craco/craco
 ### Tailwind CSS
 A utility-first CSS framework for rapid UI development
 
-[Install][tailwind-install] Tailwind CSS.
+[Install][tailwindcss-install] Tailwind CSS.
 
 ```bash
 yarn add tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9 --dev

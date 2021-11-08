@@ -231,6 +231,7 @@ Remove unused styles in production
   firebase projects:list
 
   # Install firebase dependencies in app
+  # Note that Web version 9 (modular) is being used
   cd app
   yarn install firebase@9.2.0
   ```

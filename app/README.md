@@ -42,6 +42,11 @@ yarn run deploy:firestore-rules
 yarn run deploy:storage-rules
 ```
 
+## Google Firebase
+Google Firebase implementation is using Node Web Version 9 (modular).
+
+- [Upload files wih Cloud Storage on Web][firebase-progress-updates]
+
 ---
 
 ## Resources
@@ -57,6 +62,7 @@ yarn run deploy:storage-rules
 
 ---
 
+[firebase-progress-updates]: https://firebase.google.com/docs/storage/web/upload-files
 [react]: https://reactjs.org/
 [cra-docs]: https://facebook.github.io/create-react-app/docs/getting-started
 [code-splitting]: https://facebook.github.io/create-react-app/docs/code-splitting

@@ -276,6 +276,44 @@ Provision your Cloud Firestore database.
   npm run deploy:firestore-rules
   ```
 
+#### Storage
+
+- Initialize Firebase in app again
+
+  ```bash
+  cd app
+  firebase init
+  # press space and enter for Storage
+  # use an existing project
+  # select your project
+  # accept default files:
+  #   storage.rules
+  ```
+
+- Update rules to allow read and write
+
+  ```
+  rules_version = '2';
+  service firebase.storage {
+    match /b/{bucket}/o {
+      match /users/{userId}/{fileName} {
+        allow read: if request.auth.uid == userId;
+        allow write: if request.auth.uid == userId
+                    && request.resource.size < 5 * 1024 * 1024
+                    && request.resource.contentType.matches('image/.*')
+      }
+    }
+  }
+  ```
+
+- Deploy rules to Google Firebase. _(`deploy:storage-rules` script exists in package.json)_
+
+  ```bash
+  firebase deploy --only storage:rules
+  # or
+  npm run deploy:storage-rules
+  ```
+
 ---
 
 [node]: https://nodejs.org/

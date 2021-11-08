@@ -11,6 +11,7 @@
 - [React][react]
 - [React Router][react-router]
 - [React Hook Form][react-hook-form]
+- [CRACO][craco]
 - [Tailwind CSS][tailwindcss]
 - [Node.js][nodejs]
 - [Firebase][firebase]
@@ -122,11 +123,12 @@ React Hooks for form validation
 yarn add react-hook-form@7.18.0
 ```
 
-### Craco
-
+### CRACO
 Configuration override
 
-[Install][craco]
+[Install][craco] and configure CRACO. This is needed to configure Tailwind CSS later on
+because Create React App doesn’t support PostCSS 8 yet so you need to install the
+Tailwind CSS v2.0 PostCSS 7 compatibility build for now as we’ve shown above.
 
 ```bash
 yarn add @craco/craco

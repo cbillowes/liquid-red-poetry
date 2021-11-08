@@ -4,6 +4,7 @@
 
 ## Stack
 
+- [Node][node]
 - [Git][git]
 - [Yarn][yarn]
 - [Prettier][prettier]
@@ -15,6 +16,12 @@
 - [Firebase][firebase]
 
 ## Getting Started
+
+### Node
+A JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+- [Download][node] and install Node 16.13.0 LTS (at the time of writing).
+- [Install][nvm] the Node Version Manager if you can so that you can manage different Node versions.
 
 ### Git
 Version control
@@ -271,6 +278,7 @@ Provision your Cloud Firestore database.
 
 ---
 
+[node]: https://nodejs.org/
 [git]: https://git-scm.com/downloads
 [git-set-up]: https://www.atlassian.com/git/tutorials/setting-up-a-repository
 [github]: https://github.com/

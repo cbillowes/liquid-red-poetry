@@ -33,9 +33,9 @@ const Header = () => {
 
   return (
     <div className="max-w-screen-2xl mx-auto flex justify-between mb-12 items-center">
-      <div className="text-5xl mx-4">
-        <span className="text-white font-sans-serif font-thin">liquid</span>
-        <span className="text-red-500 font-serif font-bold">Red</span>
+      <div className="text-4xl mx-4">
+        <span className="text-gray-300 font-sans-serif">liquid</span>
+        <span className="bg-red-500 font-serif font-bold m-1 py-1 px-2 text-white rounded-md">Red</span>
       </div>
       {user ? (
         <SignedIn displayName={user.displayName} history={history} />

@@ -93,7 +93,7 @@ const SignUp = () => {
           />
         </div>
         <div className="mx-2 flex justify-end">
-          <SubmitButton isLoading={isLoading} />
+          <SubmitButton isLoading={isLoading}>Sign Up</SubmitButton>
         </div>
 
         <div className="mt-2 flex justify-end pr-7">

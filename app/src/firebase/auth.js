@@ -9,12 +9,18 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-export const signup = async ({ displayName, email, password }) => {
+export const signup = async ({
+  displayName,
+  email,
+  password,
+  firstName,
+  lastName,
+}) => {
   const auth = getAuth(app);
   const resp = await createUserWithEmailAndPassword(auth, email, password);
   const user = resp.user;
   await updateProfile(user, { displayName });
-  await createUser(user);
+  await createUser({ ...user, firstName, lastName });
   return user;
 };
 

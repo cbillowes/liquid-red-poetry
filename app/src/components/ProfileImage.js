@@ -1,49 +1,57 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { getProfileImageUrl, uploadProfileImage } from '../firebase/user';
+import React, { useRef, useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { getProfileImageUrl, uploadProfileImage } from "../firebase/user";
+import { Progress } from "./Progress";
 
 export const ProfileImage = ({ id }) => {
-  const placeholder = '/profile-placeholder.png';
-  const fileInput = useRef(null);
-  const [ imageUrl, setImageUrl ] = useState(placeholder);
-  const [ uploadProgress, setUploadProgress ] = useState(0);
+  const placeholder = "/placeholder.png";
+  const [imageUrl, setImageUrl] = useState(placeholder);
+  const [progress, setProgress] = useState();
+  const [status, setStatus] = useState();
+  const uploadButton = useRef(null);
 
   useEffect(() => {
     getProfileImageUrl(id)
-      .then((url) => setImageUrl(url));
-  }, [id])
+      .then((url) => {
+        setImageUrl(url);
+        setStatus("Uploading");
+      })
+      .catch(() => setImageUrl(placeholder));
+  }, [id]);
 
-  const progressIndication = (progress) => {
-    setUploadProgress(progress);
-  }
+  const triggerUpload = () => {
+    uploadButton?.current?.click();
+  };
 
   const fileChange = (files) => {
     const file = files[0];
-    uploadProfileImage(id, file, progressIndication)
-      .then((url) => setImageUrl(url))
+    uploadProfileImage(id, file, (result) => {
+      setProgress(result.percentage);
+      setStatus(result.status);
+    })
+      .then((url) => {
+        setImageUrl(url);
+      })
       .catch(() => setImageUrl(placeholder));
-  }
+  };
 
   return (
-    <div className="ui form four wide column profile-image">
-      <img
-        className="ui image"
-        src={imageUrl}
-        alt="profile"
-      />
+    <div>
       <input
-        className="file-input"
+        name="upload"
+        className="hidden"
         type="file"
         accept=".png,.jpg"
-        ref={fileInput}
+        ref={uploadButton}
         onChange={(e) => fileChange(e.target.files)}
       />
-      <progress style={{ width: "100%" }} value={uploadProgress} maxValue="100" />
-      <button
-        className="ui grey button upload-button"
-        onClick={() => fileInput.current.click()}
-      >
-        Upload photo
-      </button>
+      <img
+        className="rounded-md mt-2 cursor-pointer"
+        src={imageUrl}
+        alt="profile"
+        onClick={triggerUpload}
+      />
+      <Progress status={status} percentage={progress} />
     </div>
-  )
-}
+  );
+};

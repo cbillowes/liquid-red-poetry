@@ -15,15 +15,24 @@ export const uploadFile = (path, file, progressObserver) => {
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        progressObserver(progress);
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 99;
+        progressObserver({
+          percentage: progress,
+          status: "Uploading",
+        });
       },
       (error) => reject(error),
       () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          resolve(downloadURL);
-        });
+        getDownloadURL(uploadTask.snapshot.ref)
+          .then((downloadURL) => {
+            resolve(downloadURL);
+          })
+          .then(() => {
+            progressObserver({
+              percentage: 100,
+              status: "Completed",
+            });
+          });
       }
     );
   });
@@ -32,5 +41,5 @@ export const uploadFile = (path, file, progressObserver) => {
 export const getDownloadUrl = async (path) => {
   const storage = getStorage(app);
   const fileRef = ref(storage, path);
-  return getDownloadURL(fileRef);
+  return getDownloadURL(fileRef).then((image) => image);
 };

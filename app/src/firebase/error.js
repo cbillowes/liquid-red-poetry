@@ -1,6 +1,9 @@
 import React from "react";
 import { DullLinkButton } from "../components/Button";
 
+const fileDoesNotExist = (error) =>
+  error.indexOf("storage/object-not-found") > -1;
+
 const isAlreadyRegistered = (error) =>
   error.indexOf("auth/email-already-in-use") > -1;
 
@@ -14,7 +17,9 @@ const isNotRegistered = (error) => error.indexOf("auth/user-not-found") > -1;
 
 const isInvalidEmail = (error) => error.indexOf("auth/invalid-email") > -1;
 
-const isUnauthorized = (error) => error.indexOf("permission-denied") > -1;
+const isUnauthorized = (error) =>
+  error.indexOf("permission-denied") > -1 ||
+  error.indexOf("storage/unauthorized") > -1;
 
 const ErrorMessage = ({ children }) => (
   <span className="text-red-500 font-bold">{children}</span>
@@ -26,6 +31,13 @@ export const getErrorMessage = (exception) => {
     // TODO: remove
     console.log(error);
     console.error(error);
+
+    if (fileDoesNotExist(error))
+      return (
+        <ErrorMessage>
+          Something that does not exist is trying to be accessed.
+        </ErrorMessage>
+      );
 
     if (isAlreadyRegistered(error))
       return (

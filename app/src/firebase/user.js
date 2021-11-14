@@ -14,8 +14,8 @@ export const createUser = async (user) => {
     uid: user.uid,
     email: user.email,
     displayName: user.displayName,
-    firstName: "",
-    lastName: "",
+    firstName: user.firstName,
+    lastName: user.lastName,
   };
   const pathSegments = [user.uid];
   await createDocument(path, pathSegments, userProfile);

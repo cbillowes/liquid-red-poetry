@@ -2,33 +2,34 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
-const Button = ({ onClick, isLoading, text, className }) => {
+const Button = ({ onClick, isLoading, className, children }) => {
   return (
     <button
-      className={`${className} text-gray-700 rounded-md hover:bg-red-500 cursor-pointer flex items-center h-12 justify-center`}
+      className={`${className} rounded-md hover:bg-red-500 cursor-pointer flex items-center h-12 justify-center`}
       onClick={onClick}
       type="submit"
     >
-      {isLoading ? <Spinner /> : text}
+      {isLoading ? <Spinner /> : children}
     </button>
   );
 };
 
-const SubmitButton = ({ isLoading, onClick }) => (
+const SubmitButton = ({ isLoading, onClick, children }) => (
   <Button
     isLoading={isLoading}
     onClick={onClick}
-    text="Continue"
-    className="bg-yellow-400 w-32"
-  />
+    className="bg-yellow-400 text-gray-700 w-32"
+  >
+    {children}
+  </Button>
 );
 
-const BrightLinkButton = ({ to, text }) => {
-  return <Link to={to} className="text-yellow-400 hover:text-red-500 inline">{text}</Link>;
+const BrightLinkButton = ({ to, text, onClick }) => {
+  return <Link onClick={onClick} to={to} className="text-yellow-400 hover:text-red-500 inline">{text}</Link>;
 };
 
-const DullLinkButton = ({ to, text }) => {
-  return <Link to={to} className="text-gray-400 hover:text-red-500 inline">{text}</Link>;
+const DullLinkButton = ({ to, text, onClick }) => {
+  return <Link onClick={onClick} to={to} className="text-gray-400 hover:text-red-500 inline">{text}</Link>;
 };
 
 const LinkButton = ({ className, text, onClick }) => {

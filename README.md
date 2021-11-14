@@ -23,12 +23,14 @@
 ## Getting Started
 
 ### Node
+
 A JavaScript runtime built on Chrome's V8 JavaScript engine.
 
 - [Download][node] and install Node 16.13.0 LTS (at the time of writing).
 - [Install][nvm] the Node Version Manager if you can so that you can manage different Node versions.
 
 ### Git
+
 Version control
 
 - [Download][git] and install Git.
@@ -46,6 +48,7 @@ Version control
   ```
 
 ### Yarn
+
 Dependency manager
 
 - We will be using Yarn [instead][yarn-vs-npm] on npm to manage our project dependencies.
@@ -56,9 +59,11 @@ Dependency manager
   ```
 
 ### Prettier
+
 Code formatter
 
 - Install and configure
+
   ```bash
   yarn add --dev --exact prettier
   echo {}> .prettierrc.json
@@ -73,9 +78,11 @@ Code formatter
   ```
 
 ### React
+
 Web framework
 
 - Install the React Developer Tools [extension][react-developer-tools] for your browser.
+
   - [Chrome][react-developer-tools-chrome]
   - [Firefox][react-developer-tools-firefox]
 
@@ -112,6 +119,7 @@ Web framework
   ```
 
 ### React Router
+
 Declarative routing for React
 
 ```bash
@@ -119,6 +127,7 @@ yarn add react-router-dom@5.3.0
 ```
 
 ### React Hook Format
+
 React Hooks for form validation
 
 [Install][react-hook-form] and configure
@@ -128,6 +137,7 @@ yarn add react-hook-form@7.18.0
 ```
 
 ### CRACO
+
 Configuration override
 
 [Install][craco] and configure CRACO. This is needed to configure Tailwind CSS later on
@@ -154,6 +164,7 @@ yarn add @craco/craco
 ```
 
 ### Tailwind CSS
+
 A utility-first CSS framework for rapid UI development
 
 [Install][tailwindcss-install] Tailwind CSS.
@@ -169,13 +180,10 @@ Configure `tailwindcss` and `autoprefixer` as PostCSS plugins:
 module.exports = {
   style: {
     postcss: {
-      plugins: [
-        require('tailwindcss'),
-        require('autoprefixer'),
-      ],
+      plugins: [require("tailwindcss"), require("autoprefixer")],
     },
   },
-}
+};
 ```
 
 Create the configuration file
@@ -203,10 +211,12 @@ Remove unused styles in production
 - Go to the [console][firebase-console]
 
 - Create a new Firebase project
+
   - Enter a name (Google will help you keep it unique)
   - Choose to add Google Analytics (you can disable it for now)
 
 - Add Firebase to your web app
+
   - Project Settings (Gear next to Project Overview) > Your apps > Click on web icon
   - Give an app nickname
   - Don't need hosting just yet
@@ -247,6 +257,7 @@ Remove unused styles in production
 #### Firestore
 
 Provision your Cloud Firestore database.
+
 - Firestore Database > Create database > Start in **production mode**.
 - Choose your Cloud Firestore location (you cannot change this later!)
 - Initialize Firebase in app

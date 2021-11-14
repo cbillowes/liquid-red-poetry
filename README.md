@@ -289,7 +289,8 @@ In this section we will be setting up a user with claims.
      node ./firebase/set-custom-claims.js <user-uid>
      ```
 
-
+**Inspect the user's authentication token**\
+There is a snippet `./firebase/snippets/token.js` that you can run in your browser. The user needs to be signed in.
 
 **TODO**\
 I can't remember why this is here.

@@ -252,7 +252,49 @@ Remove unused styles in production
 
 #### Authentication
 
-- Set up email/password sign-in method in the [console][firebase-console].
+In this section we will be setting up a user with claims.
+
+- **Enable email/password sign-in method**\
+  Authentication > Sign-in method > Sign-in providers > Add new provider
+
+- **Create the user**\
+  Authentication > Users > Add user and enter email and password
+
+- **Programmatically set the claims**
+
+  - Install the Firebase Admin SDK
+
+    ```bash
+    npm i firebase-admin@10.0.0
+    ```
+
+  - **Create a service account**\
+    Project settings > Service accounts > Generate new private key (JSON format).\
+    Save it to `./firebase/keys/firebase-service-account.json`.
+
+    **Your private key gives access to your project's Firebase services.
+    Keep it confidential and never store it in a public repository.**
+
+    The Admin SDK configuration snippet can be found, extended, in
+    `./firebase/set-custom-claims.js`.
+
+  - **Copy the admin user's User UID**
+    Authentication > Users > Copy User UID
+
+  - **Set the claims**
+
+     ```bash
+     node ./firebase/set-custom-claims.js <user-uid>
+     ```
+
+
+
+**TODO**\
+I can't remember why this is here.
+
+```bash
+firebase functions:config:set --only firebase
+```
 
 #### Firestore
 

@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "prettier": "2.4.1"
+  },
+  "dependencies": {
+    "firebase-admin": "^10.0.0"
   }
 }

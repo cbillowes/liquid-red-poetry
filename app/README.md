@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Getting Started
 
-### React Scripts
+### Node
 
 ```bash
 # Be sure to be working in the app directory relative to root.
@@ -15,6 +15,27 @@ cd app/
 nvm use 16
 ```
 
+#### Yarn Migration
+
+- [Step by step Yarn migration][step-by-step-yarn-migration].
+- [Take a look at everything that needs to be ignored by git][yarn-ignore-files].
+
+```bash
+# Upgrade Yarn
+## Update the global yarn version to latest v1
+npm install -g yarn
+
+## Enable v2 in the project directory
+yarn set version berry
+
+## Add nodeLinker: node-modules in your .yarnrc.yml file
+## Commit the changes so far (yarn-X.Y.Z.js, .yarnrc.yml, ...)
+
+## Migrate the lockfile
+yarn install
+```
+
+### Scripts
 ```bash
 # Development mode: http://localhost:3000.
 yarn start
@@ -32,7 +53,7 @@ yarn test
 yarn build
 ```
 
-### Google Firebase Scripts
+### Google Firebase
 
 ``` bash
 # Uploads the Firestore rules to Google Firebase for the authenticated account.
@@ -71,3 +92,5 @@ Google Firebase implementation is using Node Web Version 9 (modular).
 [advanced-configuration]: https://facebook.github.io/create-react-app/docs/advanced-configuration
 [deployment]: https://facebook.github.io/create-react-app/docs/deployment
 [error-fails-to-minify]: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[step-by-step-yarn-migration]: https://yarnpkg.com/getting-started/migration#why-should-you-migrate
+[yarn-ignore-files]: https://yarnpkg.com/getting-started/migration#why-should-you-migrate

@@ -171,6 +171,8 @@ A utility-first CSS framework for rapid UI development
 
 ```bash
 yarn add tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9 --dev
+# For yarn 2
+yarn add tailwindcss@npm:@tailwindcss/postcss7-compat@^2.0.2 postcss@^7 autoprefixer@^9 --dev
 ```
 
 Configure `tailwindcss` and `autoprefixer` as PostCSS plugins:
@@ -373,6 +375,14 @@ Provision your Cloud Firestore database.
   # or
   npm run deploy:storage-rules
   ```
+
+## Upgrade to Yarn 2
+
+**Failed to load config "react-app" to extend from.**
+
+```bash
+yarn add eslint-config-react-app --dev
+```
 
 ---
 
